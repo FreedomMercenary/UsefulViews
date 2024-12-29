@@ -15,17 +15,21 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdk 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 24
-        versionCode 236
-        versionName "2.3.6"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 237
+        versionName "2.3.7"
     }
     buildTypes {
         release {
@@ -33,24 +37,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.satsuware.usefulviews'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:support-annotations:24.0.0@jar'
+    testImplementation "junit:junit:4.13.2"
+    implementation ("androidx.appcompat:appcompat:1.7.0") {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    }
+    implementation "androidx.annotation:annotation:1.7.0"
 }
+
 
 publish {
     // Library will be used in the following format:
     // compile '(publishedGroupId):(artifact):(libraryVersion)'
+    /*
     userOrg = 'farbodsalamat-zadeh'
     groupId = 'com.satsuware.lib'
     artifactId = 'usefulviews'
-    publishVersion = "2.3.6"
+    publishVersion = "2.3.7"
     desc = 'A collection of useful widgets for Android.'
-    website = 'https://github.com/FarbodSalamat-Zadeh/UsefulViews'
+    website = 'https://github.com/FreedomMercenary/UsefulViews'
     issueTracker = "${website}/issues"
     repository = "${website}.git"
+    */
 }

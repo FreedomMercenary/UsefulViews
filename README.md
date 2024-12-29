@@ -9,12 +9,26 @@ This project initially started from `LabelledSpinner` (a Spinner component with 
 ## Gradle (Android Studio)
 You can add this Android library to your Gradle dependencies.
 
+Add the Github repository to `settings.gradle`
+
+```groovy
+sourceControl {
+    gitRepository(URI.create("https://github.com/FreedomMercenary/UsefulViews.git")) {
+        producesModule("com.satsuware.lib:usefulviews")
+    }
+}
+```
+
 To do so, add the following to your app module's `build.gradle` file:
 
 ```groovy
 dependencies {
     ...
-    compile 'com.satsuware.lib:usefulviews:2.3.6'
+    implementation('com.satsuware.lib:usefulviews') {
+        version {
+            branch = 'master'
+        }
+    }
 }
 ```
 

@@ -3,6 +3,12 @@
 [![Releases](https://img.shields.io/badge/LabelledSpinner-releases-blue.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/releases)
 [![Tags](https://img.shields.io/badge/LabelledSpinner-tags-FF69B4.svg)](https://github.com/FarbodSalamat-Zadeh/UsefulViews/tags)
 
+## 2.3.7
+_29th Dec '24_
+- Update SDK versions (compileSdk and targetSdkVersion) to 34 (including in `.travis.yml`)
+- Replace retired jcenter with maven and google repositories
+- Replace retired Android support library with AndroidX
+
 ## 2.3.6
 _18th Jun '16_
 - Update Android Support library dependencies to 24.0.0
