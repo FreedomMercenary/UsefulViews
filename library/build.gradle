@@ -38,6 +38,12 @@ android {
         }
     }
     namespace 'com.satsuware.usefulviews'
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -48,6 +54,19 @@ dependencies {
     implementation "androidx.annotation:annotation:1.7.0"
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+        // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.satsuware.lib'
+                artifactId = 'usefulviews'
+                version = '2.3.7'
+            }
+        }
+    }
+}
 
 publish {
     // Library will be used in the following format:
