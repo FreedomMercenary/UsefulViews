@@ -60,8 +60,8 @@ afterEvaluate {
         // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.satsuware.lib'
-                artifactId = 'usefulviews'
+                groupId = 'com.github.FreedomMercenary'
+                artifactId = 'UsefulViews'
                 version = '2.3.7'
             }
         }
